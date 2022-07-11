@@ -1,7 +1,7 @@
 <template>
   <div>
     <!--! categories banners section -->
-    <AppCategoriesBanners />
+    <AppHomeCategoriesBanners />
     <!--! men category slider -->
     <AppCategorySlider
       :title="menSliderTitle"
