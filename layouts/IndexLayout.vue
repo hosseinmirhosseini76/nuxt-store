@@ -3,11 +3,11 @@
     <!--! header section -->
     <AppNavbar />
     <!--! main content section -->
-    <div class="col-12 p-0 info">
+    <div class="col-12 p-0">
       <nuxt />
     </div>
     <!--! footer section -->
-    <AppCusotomFooter />
+    <AppCustomFooter />
   </div>
 </template>
 
@@ -16,4 +16,3 @@ export default {
   name: "IndexLayout"
 }
 </script>
-
