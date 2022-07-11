@@ -6,24 +6,21 @@
         <div class="col-12">
           <nav class="main-nav">
             <!-- ***** Logo Start ***** -->
-            <a href="/" class="logo">
+            <nuxt-link to="/" class="logo">
               <img src="/images/logo.png">
-            </a>
+            </nuxt-link>
             <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
-              <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
-              <li class="scroll-to-section"><a href="#men">Men's</a></li>
-              <li class="scroll-to-section"><a href="#women">Women's</a></li>
-              <li class="scroll-to-section"><a href="#kids">Kid's</a></li>
-              <li class="submenu" @click="subMenuClicked">
-                <a href="javascript:;">Pages</a>
-                <ul class="submenu-ul">
-                  <li><a href="about.html">About Us</a></li>
-                  <li><a href="products.html">Products</a></li>
-                  <li><a href="single-product.html">Single Product</a></li>
-                  <li><a href="contact.html">Contact Us</a></li>
-                </ul>
+              <li class="scroll-to-section"><nuxt-link to="/#top">Home</nuxt-link></li>
+              <li class="scroll-to-section">
+                <nuxt-link :to="({name: 'products', query: { category: 'Men' }})">Men's</nuxt-link>
+              </li>
+              <li class="scroll-to-section">
+                <nuxt-link :to="({name: 'products', query: { category: 'Women' }})">Women's</nuxt-link>
+              </li>
+              <li class="scroll-to-section">
+                <nuxt-link :to="({name: 'products', query: { category: 'Jewelry' }})">Jewelries</nuxt-link>
               </li>
               <li class="submenu" @click="subMenuClicked">
                 <a href="javascript:;">Features</a>
@@ -34,7 +31,7 @@
                   <li><a rel="nofollow" href="https://templatemo.com/page/4" target="_blank">Template Page 4</a></li>
                 </ul>
               </li>
-              <li class="scroll-to-section"><a href="#explore">Explore</a></li>
+              <li class="scroll-to-section"><nuxt-link to="/login">Login</nuxt-link></li>
             </ul>
             <a class='menu-trigger' @click="openMenu">
               <span>Menu</span>
