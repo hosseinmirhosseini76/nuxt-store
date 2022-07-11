@@ -6,6 +6,8 @@
     <div class="col-12 p-0 info">
       <nuxt />
     </div>
+    <!--! footer section -->
+    <AppCusotomFooter />
   </div>
 </template>
 
