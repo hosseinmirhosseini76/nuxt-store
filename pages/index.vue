@@ -26,6 +26,12 @@
       :slider-loading="jewelrySliderItemsLoading"
       slider-id="333"
     />
+    <!--! explore products section -->
+    <AppHomeExploreProducts />
+    <!--! social area section -->
+    <AppHomeSocialArea />
+    <!--! subscribe section -->
+    <AppHomeSubscribe />
   </div>
 </template>
 
