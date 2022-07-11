@@ -10,7 +10,7 @@
                 <h4>We Are Hexashop</h4>
                 <span>Awesome, clean &amp; creative HTML5 Template</span>
                 <div class="main-border-button">
-                  <a href="#">Purchase Now!</a>
+                  <nuxt-link :to="({name: 'products', query: { category: 'All' }})">Purchase Now!</nuxt-link>
                 </div>
               </div>
               <img src="/images/left-banner-image.jpg" alt="">
@@ -32,7 +32,7 @@
                         <h4>Women</h4>
                         <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>
                         <div class="main-border-button">
-                          <a href="#">Discover More</a>
+                          <nuxt-link :to="({name: 'products', query: { category: 'Women' }})">Discover More</nuxt-link>
                         </div>
                       </div>
                     </div>
@@ -52,7 +52,7 @@
                         <h4>Men</h4>
                         <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>
                         <div class="main-border-button">
-                          <a href="#">Discover More</a>
+                          <nuxt-link :to="({name: 'products', query: { category: 'Men' }})">Discover More</nuxt-link>
                         </div>
                       </div>
                     </div>
@@ -72,7 +72,7 @@
                         <h4>Kids</h4>
                         <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>
                         <div class="main-border-button">
-                          <a href="#">Discover More</a>
+                          <nuxt-link :to="({name: 'products', query: { category: 'All' }})">Discover More</nuxt-link>
                         </div>
                       </div>
                     </div>
@@ -92,7 +92,7 @@
                         <h4>Accessories</h4>
                         <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>
                         <div class="main-border-button">
-                          <a href="#">Discover More</a>
+                          <nuxt-link :to="({name: 'products', query: { category: 'Jewelry' }})">Discover More</nuxt-link>
                         </div>
                       </div>
                     </div>
