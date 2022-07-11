@@ -1582,7 +1582,7 @@ Products Page
 .page-heading {
   margin-top: 160px;
   margin-bottom: 30px;
-  //background-image: url(../images/products-page-heading.jpg);
+  background-image: url(../../static/images/products-page-heading.jpg);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1675,6 +1675,11 @@ Products Page
   position: relative;
 }
 
+#products .item .thumb img {
+  width: 360px;
+  height: 370px;
+}
+
 #products .item .thumb .hover-content ul li {
   display: inline;
   margin: 0px 10px;
@@ -1715,6 +1720,42 @@ Products Page
   font-size: 14px;
   font-weight: 500;
   color: #2a2a2a;
+}
+
+#products .category-filter {
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+#products .category-filter ul {
+  text-align: center;
+  width: 100%;
+}
+
+#products .category-filter ul li {
+  display: inline;
+  margin: 0px 5px;
+}
+
+#products .category-filter ul li:hover {
+  cursor: pointer;
+}
+
+#products .category-filter ul li button {
+  padding: 0.2rem 1rem;
+  border: 1px solid #2a2a2a;
+  display: inline-block;
+  text-align: center;
+  line-height: 44px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #2a2a2a;
+  background-color: transparent;
+}
+
+#products .category-filter ul li.active button {
+  background-color: #2a2a2a;
+  color: #fff;
 }
 
 #products .pagination ul li a:hover,
@@ -1921,7 +1962,7 @@ About Us Page
 .about-page-heading {
   margin-top: 160px;
   margin-bottom: 30px;
-  //background-image: url(../images/about-us-page-heading.jpg);
+  background-image: url(../../static/images/about-us-page-heading.jpg);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
