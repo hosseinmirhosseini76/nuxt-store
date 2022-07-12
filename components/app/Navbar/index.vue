@@ -22,15 +22,29 @@
               <li class="scroll-to-section">
                 <nuxt-link :to="({name: 'products', query: { category: 'Jewelry' }})">Jewelries</nuxt-link>
               </li>
-              <li class="submenu" @click="subMenuClicked">
+              <!--! cart item -->
+              <li class="cart" @click="subMenuClicked">
                 <a href="javascript:;">
                   <i class="fa-solid fa-cart-shopping"></i>
+                  <b-badge v-if="$store.state.cart.items.length > 0" variant="info">
+                    {{ $store.state.cart.items.length }}
+                  </b-badge>
                 </a>
                 <ul class="submenu-ul">
-                  <li><a href="#">Features Page 1</a></li>
-                  <li><a href="#">Features Page 2</a></li>
-                  <li><a href="#">Features Page 3</a></li>
-                  <li><a rel="nofollow" href="https://templatemo.com/page/4" target="_blank">Template Page 4</a></li>
+                  <li v-if="$store.state.cart.items.length === 0 || !$store.state.cart.items">
+                    <span>
+                      There is no Item
+                    </span>
+                  </li>
+                  <template v-else>
+                    <li v-for="(cart, cartIndex) in $store.state.cart.items" :key="cartIndex">
+                      <span>
+                        <img :src="cart.image">
+                        {{ cart.title.substr(0, 15) }}
+                        <i @click="$store.dispatch('cart/removeFromCart', cart)" class="fa-solid fa-trash"></i>
+                      </span>
+                    </li>
+                  </template>
                 </ul>
               </li>
               <li v-if="!$store.state.user.token">
