@@ -21,3 +21,12 @@ export function setLocalStorage (key, roles) {
 export function removeLocalStorage (key) {
   return localStorage.removeItem(key)
 }
+
+//! Local storage as array
+export function getLocalStorageAsArray (key) {
+  let permissionsArray = localStorage.getItem(key)
+  return JSON.parse(permissionsArray)
+}
+export function setLocalStorageAsArray (key, permissions) {
+  return localStorage.setItem(key, JSON.stringify(permissions))
+}
