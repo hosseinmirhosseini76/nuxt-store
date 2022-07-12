@@ -10,7 +10,19 @@
         </div>
       </div>
     </div>
-    <div class="container">
+    <!--! loading section -->
+    <div v-if="sliderLoading" class="container">
+      <div class="row m-0">
+        <div
+          v-for="load in 3"
+          class="col-md-4 col-12"
+        >
+          <b-skeleton-img></b-skeleton-img>
+        </div>
+      </div>
+    </div>
+    <!--! slider items -->
+    <div v-show="sliderItems.length > 0 && !sliderLoading" class="container">
       <div class="row">
         <div class="col-lg-12">
           <div class="men-item-carousel">
