@@ -1,5 +1,5 @@
 # nuxt-store
-This is a free store website that created by Nuxt.js
+This is a free store website that created by Nuxt.js __[demo](https://store.hossein.dev)__
 
 ## Build Setup
 
