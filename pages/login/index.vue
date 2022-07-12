@@ -7,6 +7,7 @@
           <div class="col-lg-12">
             <div class="inner-content">
               <h2>Sing in For Better Experience</h2>
+              <span>Log in at the simplest way</span>
             </div>
           </div>
         </div>
@@ -17,6 +18,7 @@
       <div class="row justify-content-center">
         <div class="col-lg-2">
           <div class="col-lg-12 px-0">
+            <span>Username</span>
             <fieldset>
               <input
                 v-model="user.username"
@@ -29,13 +31,13 @@
             </fieldset>
           </div>
           <div class="col-lg-12 px-0 mt-2">
+            <span>Password</span>
             <fieldset>
               <input
                 v-model="user.password"
                 name="password"
                 type="password"
                 id="password"
-                pattern="[^ @]*@[^ @]*"
                 placeholder="Your Password"
                 required=""
               >
@@ -97,7 +99,6 @@ export default {
             position: 'bottom-left',
             duration: 3000
           })
-          console.log(err)
         })
         .finally(() => {
           this.loginLoading = false
