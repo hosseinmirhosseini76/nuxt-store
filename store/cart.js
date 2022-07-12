@@ -6,7 +6,7 @@ import {
 } from "../util/storeData";
 
 export const state = () => ({
-  items: getLocalStorageAsArray(CART_KEY),
+  items: !getLocalStorageAsArray(CART_KEY) ? [] : getLocalStorageAsArray(CART_KEY),
 })
 
 export const actions = {
