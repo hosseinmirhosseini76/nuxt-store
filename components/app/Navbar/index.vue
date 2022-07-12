@@ -23,7 +23,9 @@
                 <nuxt-link :to="({name: 'products', query: { category: 'Jewelry' }})">Jewelries</nuxt-link>
               </li>
               <li class="submenu" @click="subMenuClicked">
-                <a href="javascript:;">Features</a>
+                <a href="javascript:;">
+                  <i class="fa-solid fa-cart-shopping"></i>
+                </a>
                 <ul class="submenu-ul">
                   <li><a href="#">Features Page 1</a></li>
                   <li><a href="#">Features Page 2</a></li>
@@ -31,7 +33,12 @@
                   <li><a rel="nofollow" href="https://templatemo.com/page/4" target="_blank">Template Page 4</a></li>
                 </ul>
               </li>
-              <li class="scroll-to-section"><nuxt-link to="/login">Login</nuxt-link></li>
+              <li v-if="!$store.state.user.token">
+                <nuxt-link to="/login">Login</nuxt-link>
+              </li>
+              <li v-else @click="$store.dispatch('user/logoutConfig')">
+                <a>Logout</a>
+              </li>
             </ul>
             <a class='menu-trigger' @click="openMenu">
               <span>Menu</span>
