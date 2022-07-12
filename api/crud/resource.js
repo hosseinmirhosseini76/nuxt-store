@@ -29,6 +29,25 @@ class Resource {
       })
   }
 
+  getAnItem (id, params) {
+    return request({
+      url: this.uri + '/' + id,
+      method: 'get',
+      params: params
+    })
+      .catch((err) => {
+        if (err.response.status === 500) {
+          this.showErrorMessage('Error occurred!')
+        } else {
+          this.showErrorMessage(err.response.data.detail)
+        }
+        if (err.response.status === 401) {
+          this.expiredWork()
+        }
+        return err
+      })
+  }
+
   /* ! This method use for expired users */
   expiredWork () {
     window.$nuxt.$options.store.dispatch('user/logout')
