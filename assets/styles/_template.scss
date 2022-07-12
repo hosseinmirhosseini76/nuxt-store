@@ -1685,6 +1685,10 @@ Products Page
   margin: 0px 10px;
 }
 
+#products .item .thumb:hover .hover-content ul li:hover {
+  cursor: pointer;
+}
+
 #products .item .thumb .hover-content ul li a {
   width: 50px;
   height: 50px;
@@ -1830,15 +1834,16 @@ Single Product Page
 
 #product .right-content .quote i {
   float: left;
-  font-size: 32px;
-  margin-right: 15px;
-  margin-top: 10px;
+  font-size: 26px;
+  margin-right: 12px;
+  margin-top: 0px;
 }
 
 #product .right-content .quote p {
   font-style: italic;
   color: #2a2a2a;
   font-weight: 500;
+  font-size: 18px;
 }
 
 #product .right-content p {
@@ -1902,7 +1907,7 @@ Single Product Page
   display: inline-block; }
 
 .quantity .input-text.qty {
-  width: 35px;
+  width: 50px;
   height: 39px;
   padding: 0 5px;
   text-align: center;
