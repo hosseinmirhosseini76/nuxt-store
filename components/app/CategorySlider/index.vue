@@ -23,15 +23,19 @@
                       <div class="thumb">
                         <div class="hover-content">
                           <ul>
-                            <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                            <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            <li
+                              @click="goToProductDetailPage(item)"
+                            ><a><i class="fa fa-eye"></i></a></li>
+                            <li><a><i class="fa fa-star"></i></a></li>
+                            <li
+                              @click="$store.dispatch('cart/addToCart',item)"
+                            ><a><i class="fa fa-shopping-cart"></i></a></li>
                           </ul>
                         </div>
                         <img :src="item.image" alt="">
                       </div>
                       <div class="down-content">
-                        <h4>{{ item.title.substr(0, 10)}}</h4>
+                        <h4>{{ item.title.substr(0, 15)}}</h4>
                         <span>${{ item.price }}</span>
                         <ul class="stars">
                           <li><i class="fa fa-star"></i></li>
@@ -102,6 +106,15 @@ export default {
     },
     prevSlide () {
       prevSlide(this.sliderId)
+    },
+    //! route to detail page
+    goToProductDetailPage(product) {
+      this.$router.push({
+        name: 'products-id',
+        params: {
+          id: product.id
+        }
+      })
     }
   }
 }
