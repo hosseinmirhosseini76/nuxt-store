@@ -55,7 +55,7 @@
                 </div>
                 <div class="right-content">
                   <div class="quantity buttons_added">
-                    <input type="button" value="-" class="minus">
+                    <input type="button" value="-" class="minus" @click="reduceNumberOfOrders">
                     <input
                       v-model="noOfOrders"
                       type="number"
@@ -70,13 +70,15 @@
                       pattern=""
                       inputmode=""
                     >
-                    <input type="button" value="+" class="plus">
+                    <input type="button" value="+" class="plus" @click="increaseNumberOfOrders">
                   </div>
                 </div>
               </div>
               <div class="total">
                 <h4>Total: ${{ (noOfOrders * product.price).toFixed(2) }}</h4>
-                <div class="main-border-button"><a href="#">Add To Cart</a></div>
+                <div class="main-border-button">
+                  <a @click="$store.dispatch('cart/addToCart', product)">Add To Cart</a>
+                </div>
               </div>
             </div>
           </div>
@@ -102,7 +104,6 @@ export default {
   },
   created() {
     if (!isNaN(this.$route.params.id)) {
-      console.log(this.$route.params.id)
       this.getProductDetail()
     } else this.$router.push({ name: 'products' })
   },
@@ -118,7 +119,6 @@ export default {
       this.productLoading = true
       this.getProductDetailApi(this.$route.params.id, {})
         .then((res) => {
-          console.log(res.data)
           this.product = null
           this.product = res.data
         })
@@ -126,6 +126,14 @@ export default {
         .finally(() => {
           this.productLoading = false
         })
+    },
+    //! number of orders
+    reduceNumberOfOrders() {
+      if (this.noOfOrders > 1)
+        this.noOfOrders--
+    },
+    increaseNumberOfOrders() {
+      this.noOfOrders++
     }
   }
 }
