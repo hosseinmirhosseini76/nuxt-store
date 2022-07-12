@@ -8,7 +8,7 @@
             <h2>By Subscribing To Our Newsletter You Can Get 30% Off</h2>
             <span>Details to details is what makes Hexashop different from the other themes.</span>
           </div>
-          <form id="subscribe" action="" method="get">
+          <form>
             <div class="row">
               <div class="col-lg-5">
                 <fieldset>
