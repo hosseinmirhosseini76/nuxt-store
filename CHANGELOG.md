@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.1](https://github.com/hosseinmirhosseini76/nuxt-store/compare/v1.0.0...v1.0.1) (2022-07-12)
+
+
+### Bug Fixes
+
+* **cart:** cart items nullable checked ([ca14a5d](https://github.com/hosseinmirhosseini76/nuxt-store/commit/ca14a5df4aef847ac8a0da85eaef83b15fcdf56e))
+
 ## 1.0.0 (2022-07-12)
 
 
