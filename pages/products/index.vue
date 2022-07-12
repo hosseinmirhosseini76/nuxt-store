@@ -13,7 +13,6 @@
         </div>
       </div>
     </div>
-    <!-- ***** Main Banner Area End ***** -->
     <!-- ***** Products Area Starts ***** -->
     <section class="section" id="products">
       <div class="container">
@@ -59,8 +58,19 @@
           </ul>
         </div>
       </div>
+      <!--! loading section -->
+      <div v-if="productsLoading" class="container">
+        <div class="row m-0">
+          <div
+            v-for="load in 3"
+            class="col-md-4 col-12"
+          >
+            <b-skeleton-img></b-skeleton-img>
+          </div>
+        </div>
+      </div>
       <!--! product list -->
-      <div class="container">
+      <div v-else-if="products.length > 0" class="container">
         <div class="row">
           <template v-for="(product, productIndex) in products">
             <div :key="productIndex" class="col-lg-4">
@@ -68,9 +78,12 @@
                 <div class="thumb">
                   <div class="hover-content">
                     <ul>
-                      <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                      <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                      <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
+                      <li
+                        class=""
+                        @click="goToProductDetailPage(product)"
+                      ><a><i class="fa fa-eye"></i></a></li>
+                      <li><a><i class="fa fa-star"></i></a></li>
+                      <li><a><i class="fa fa-shopping-cart"></i></a></li>
                     </ul>
                   </div>
                   <img :src="product.image" alt="">
@@ -114,7 +127,6 @@
         </div>
       </div>
     </section>
-    <!-- ***** Products Area Ends ***** -->
   </div>
 </template>
 
@@ -202,6 +214,15 @@ export default {
           this.getProducts()
         }
       }
+    },
+    //! route to detail page
+    goToProductDetailPage(product) {
+      this.$router.push({
+        name: 'products-id',
+        params: {
+          id: product.id
+        }
+      })
     }
   }
 }
